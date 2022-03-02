@@ -5,9 +5,9 @@ import requests
 def app():
     hide_st_style1 = """
             <style>
-            #MainMenu {}
-            footer {}
-            header {}
+            #MainMenu {visibility:hidden;}
+            footer {visibility:hidden;}
+            header {visibility:hidden;}
             </style>
             """
     st.markdown(hide_st_style1, unsafe_allow_html=True)
