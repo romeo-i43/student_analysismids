@@ -26,7 +26,7 @@ def app():
     st.title("Classification based on your requirement")
     st.markdown('<head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>',unsafe_allow_html=True)
     st.markdown('---')
-    df=pd.read_csv('sample.csv',index_col=[0])
+    df=pd.read_csv('sample6.csv',index_col=[0])
     st.sidebar.header("customtable")
     g=st.sidebar.radio("classify based on",('roll_no','marks','percent'))
     if g=='roll_no':
