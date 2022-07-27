@@ -25,7 +25,7 @@ def app():
     st.subheader('table')
     st.markdown('<head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>',unsafe_allow_html=True)
     st.markdown('---')
-    df=pd.read_csv('sample.csv',index_col=[0])
+    df=pd.read_csv('sample6.csv',index_col=[0])
     st.dataframe(df)
     csv = convert_df(df)
     st.download_button("Press to Download",csv,"file.csv","text/csv",key='download-csv')
