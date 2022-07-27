@@ -28,7 +28,7 @@ def app():
     st.markdown('---')
     df=pd.read_csv('sample6.csv',index_col=[0])
     st.sidebar.header("customtable")
-    g=st.sidebar.radio("classify based on",('roll_no','marks','percent'))
+    g=st.sidebar.radio("classify based on",('roll_no','percent'))
     if g=='roll_no':
         try:
             st.subheader("based on roll_no")
@@ -44,28 +44,13 @@ def app():
         except:
             pass
 
-    elif g=='marks':
-        try:
-            st.subheader("based on mid2")
-            min=st.slider('select min mid2',1,150,1)
-            max=st.slider('select max mid2',1,150,1)
-            k=df[df['totalmarks']>=min]
-            k=k[k['totalmarks']<=max]
-            k=k.reset_index()
-            del k['index']
-            st.dataframe(k)
-            csv = convert_df(k)
-            st.download_button("Press to Download",csv,"file.csv","text/csv",key='download-csv')
-        except:
-            pass
-
     elif g=='percent':
         try:
             st.subheader("based on percentage")
             min=st.slider('select min percent',1,100,1)
             max=st.slider('select max percent',1,100,1)
-            k=df[df['percent']>=min]
-            k=k[k['percent']<=max]
+            k=df[df['percentage']>=min]
+            k=k[k['percentage']<=max]
             k=k.reset_index()
             del k['index']
             st.dataframe(k)
