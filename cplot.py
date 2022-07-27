@@ -39,7 +39,7 @@ def app():
             g1=px.bar(
             k,
             x=k['roll_no'],
-            y=[k['totalmarks'],k['percent']],
+            y=[k['percentage']],
             )
             st.plotly_chart(g1)
 
@@ -59,14 +59,14 @@ def app():
         min=st.slider('select min percent',1,100,1)
         max=st.slider('select max percent',1,100,1)
         try:
-            k=df[df['percent']>=min]
-            k=k[k['percent']<=max]
+            k=df[df['percentage']>=min]
+            k=k[k['percentage']<=max]
             k=k.reset_index()
             del k['index']
             g1=px.bar(
             k,
             x=k['roll_no'],
-            y=[k['percent'],k['totalmarks']],
+            y=[k['percentage']],
             )
             st.plotly_chart(g1)
         
@@ -80,29 +80,7 @@ def app():
             lottie_url = "https://assets8.lottiefiles.com/private_files/lf30_cc9cxym5.json"
             lottie_json = load_lottieurl(lottie_url)
             st_lottie(lottie_json)
-    
-    elif g=='totalmarks':
-        try:
-            st.subheader("based on marks")
-            min=st.slider('select min marks',1,150,1)
-            max=st.slider('select max marks',1,150,1)
-            k=df[df['totalmarks']>=min]
-            k=k[k['totalmarks']<=max]
-            k=k.reset_index()
-            del k['index']
-            g1=px.bar(
-            k,
-            x=k['roll_no'],
-            y=[k['totalmarks'],k['percent']],
-            )
-            st.plotly_chart(g1)
-
-        except:
-            def load_lottieurl(url: str):
-                r = requests.get(url)
-                if r.status_code != 200:
-                    return None
-                return r.json()
+   
 
             lottie_url = "https://assets8.lottiefiles.com/private_files/lf30_cc9cxym5.json"
             lottie_json = load_lottieurl(lottie_url)
