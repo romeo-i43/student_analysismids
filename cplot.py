@@ -24,7 +24,7 @@ def app():
     st.title("plot based on your requirement")
     st.markdown('<head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>',unsafe_allow_html=True)
     st.markdown('---')
-    df=pd.read_csv('sample.csv')
+    df=pd.read_csv('sample6.csv')
     st.sidebar.header("customplot")
     st.sidebar.write("classify based on")
     g=st.sidebar.radio("what's your choice",('roll_no','totalmarks','percent'))
