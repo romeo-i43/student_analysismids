@@ -21,7 +21,7 @@ def app():
     st.subheader('graph')
     st.markdown('<head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>',unsafe_allow_html=True)
     st.markdown('---')
-    df=pd.read_csv('sample.csv')
+    df=pd.read_csv('sample6.csv')
     graph=px.bar(
     df,
     x=df['roll_no'],
