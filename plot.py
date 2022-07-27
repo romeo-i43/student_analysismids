@@ -25,6 +25,6 @@ def app():
     graph=px.bar(
     df,
     x=df['roll_no'],
-    y=[df['totalmarks'],df['percent']],
+    y=[df['percentage']],
     )
     st.plotly_chart(graph)
