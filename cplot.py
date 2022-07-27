@@ -27,7 +27,7 @@ def app():
     df=pd.read_csv('sample6.csv')
     st.sidebar.header("customplot")
     st.sidebar.write("classify based on")
-    g=st.sidebar.radio("what's your choice",('roll_no','totalmarks','percent'))
+    g=st.sidebar.radio("what's your choice",('roll_no','percent'))
     if g=='roll_no':
         try:
             st.subheader("based on roll_no")
